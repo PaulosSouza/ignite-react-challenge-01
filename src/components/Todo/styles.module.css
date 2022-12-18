@@ -1,0 +1,89 @@
+/* Container to add todos and see them */
+.main {
+  max-width: 46em;
+  width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main section {
+  width: 100%;
+}
+
+/* Todo list container */
+.todo_list_container {
+  margin-top: 2.125em;
+  height: 17.938em;
+}
+
+/* Input new todo */
+.container_create_todo {
+  display: flex;
+  gap: 0.5em;
+
+  position: relative;
+  top: -1.875em;
+}
+
+.input_todo_name {
+  display: inline-flex;
+  width: 100%;
+
+  background: var(--gray-500);
+  border: 1px solid var(--gray-700);
+  border-radius: 0.5em;
+
+  gap: 0.5em;
+}
+
+.input_todo_name span {
+  display: none;
+  padding: 1em 0 0 1em;
+}
+
+.input_todo_name input {
+  width: inherit;
+  flex: 1;
+
+  background: inherit;
+  border: transparent;
+  border-radius: inherit;
+
+  padding: 1em;
+  color: var(--gray-100);
+}
+
+.input_todo_name:focus-within span {
+  display: inline-block;
+}
+
+.input_todo_name:focus-within input {
+  padding-left: 0;
+}
+
+.input_todo_name:focus-within input::placeholder {
+  color: transparent;
+}
+
+.input_todo_name input::placeholder {
+  color: var(--gray-300);
+}
+
+.btn_add_todo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5em;
+  padding: 1em;
+
+  border-radius: 0.5em;
+  border: none;
+
+  background: var(--blue-700);
+  color: var(--gray-100);
+  font-weight: 700;
+}

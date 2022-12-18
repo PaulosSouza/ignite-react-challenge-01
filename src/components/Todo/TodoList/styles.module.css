@@ -1,0 +1,97 @@
+.todo_list_container {
+  margin-top: 1.5em;
+  height: 100%;
+
+  border-top: 1px solid var(--gray-400);
+  border-radius: 0.5em;
+}
+
+.todo_list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+
+  margin-top: 1.5em;
+}
+
+.todo_item {
+  display: flex;
+  gap: 0.75em;
+  padding: 1em;
+
+  background: var(--gray-500);
+
+  border: thin solid var(--gray-400);
+  box-shadow: 0 0.125em 0.5em rgba(0, 0, 0, 0.06);
+  border-radius: 0.5em;
+
+  line-break: anywhere;
+}
+
+.todo_item:has(input[type="checkbox"]:checked) {
+  border-color: var(--gray-500);
+}
+
+
+/* Checkbox */
+.todo_item input[type="checkbox"] {
+  appearance: none;
+  margin: 0;
+
+  width: 1.5em;
+  height: 1.5em;
+  border: 0.125em solid var(--blue-300);
+  border-radius: 1.5em;
+  transform: translateY(-0.075em);
+  cursor: pointer;
+
+  display: grid;
+  place-content: center;
+}
+
+.todo_item input[type="checkbox"]:checked {
+  background: var(--purple-700);
+  border: none;
+}
+
+.todo_item input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  background: var(--gray-100);
+  display: none;
+}
+
+.todo_item input:checked::before {
+  display: block;
+}
+
+.todo_item input[type="checkbox"]:checked~p {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
+/* Todo name */
+.todo_item p {
+  width: 100%;
+}
+
+/* Todo icon and button */
+.todo_item svg {
+  color: var(--gray-300);
+}
+
+.btn_remove_item {
+  background: transparent;
+  outline: none;
+  border: none;
+  line-height: 0;
+  margin: 0;
+  align-self: flex-start;
+}
+
+.btn_remove_item svg {
+  width: 1.125em;
+  height: 1.125em;
+}
